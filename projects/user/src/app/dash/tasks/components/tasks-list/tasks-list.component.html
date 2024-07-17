@@ -1,0 +1,20 @@
+<div class="mt-4">
+
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let item of dataSource;let index = index">
+      <div class="card mt-3" >
+        <div class="card-body text-center">
+          <h2 class="card-title" [ngClass]="{'text-decoration-line-through': item.status === 'Done'}">{{item.title}}</h2>
+          <h2 class="card-title badge-danger text-white text-center" >{{item.status}}</h2>
+          <p class="card-subtitle mb-2 text-muted">Dead-Line Date : {{item.deadLineDate}}</p>
+          <p class="card-text">{{item.description }}</p>
+          <a  class="card-link"  mat-raised-button style="cursor: pointer;" (click)="taskDetails(item)">Details</a>
+          <button  mat-raised-button color="warn" (click)="complete(item)" *ngIf="item.status !== 'Done' && item.status !== 'To Do'" >Done</button>
+          <button  mat-raised-button color="warn" *ngIf="item.status === 'To Do'" (click)="moveToInProgress(item)">Move to In-Progress</button>
+        </div>
+      </div>
+    </div>
+    <h2 *ngIf="dataSource.length === 0">No Tasks Assigned to this user</h2>
+  </div>
+</div>

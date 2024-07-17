@@ -1,0 +1,13 @@
+<div class="container">
+  
+  <div class="d-flex justify-content-between align-items-baseline my-3">
+      <h1 class="card-title ">Title: {{taskDetails.title}}</h1>
+      
+      <button  mat-raised-button color="warn" (click)="completeTask(taskDetails._id)" *ngIf="taskDetails.status !== 'Done' ">Complete</button>
+      <button  mat-raised-button color="warn" (click)="completeTask(taskDetails._id)" *ngIf="taskDetails.status === 'In-Progress' ">Move To In-Progress</button>
+  </div>
+  <h3 class="card-title bg-danger p-2 text-white" >Status: {{taskDetails.status}}</h3>
+  <p class="card-subtitle mb-2 text-muted">Deadline: {{taskDetails.deadline}}</p>
+  <hr>
+  <p class="card-text">Description: {{taskDetails.description}}</p>
+</div>
