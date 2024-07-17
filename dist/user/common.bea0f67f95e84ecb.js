@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuser=self.webpackChunkuser||[]).push([[592],{3790:(n,e,s)=>{s.d(e,{N:()=>u});const u={production:!1,baseUrl:"http://localhost:4002/"}}}]);
